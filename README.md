@@ -21,17 +21,17 @@ An AI-powered RAG application that explains medical reports in plain English and
 
 ##  Architecture
 
-```
-PDF Upload → pdfplumber extracts text
-           → split into chunks (LangChain TextSplitter)
-           → converted to vectors (all-MiniLM-L6-v2)
-           → stored in Pinecone vector database
+**Upload Phase:**
+1. User uploads PDF → pdfplumber extracts text
+2. Text split into small chunks using LangChain TextSplitter
+3. Each chunk converted to vector using all-MiniLM-L6-v2
+4. Vectors stored in Pinecone vector database
 
-User Question → converted to vector
-              → Pinecone finds top 5 relevant chunks
-              → chunks + question sent to Groq LLaMA 3
-              → plain English answer returned
-```
+**Question Phase:**
+1. User question converted to vector
+2. Pinecone finds top 5 most relevant chunks
+3. Relevant chunks + question sent to Groq LLaMA 3
+4. Plain English answer returned to user
 
 ##  Installation
 
