@@ -3,7 +3,7 @@
 
 An AI-powered RAG application that explains medical reports in plain English and answers follow-up questions using conversational memory.
 
-##  Features
+## 🚀 Features
 - Upload any medical PDF report
 - Get instant plain English explanation
 - Ask follow-up questions in a chat interface
@@ -72,4 +72,6 @@ An AI-powered RAG application that explains medical reports in plain English and
 3. Read the plain English explanation
 4. Ask follow-up questions in the chat
 
+## ⚠️ Disclaimer
+This app explains medical reports in simple English for informational purposes only. Always consult a qualified doctor for medical advice.
 ```
