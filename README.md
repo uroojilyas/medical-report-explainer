@@ -36,7 +36,6 @@ An AI-powered RAG application that explains medical reports in plain English and
 ##  Installation
 
 ### 1. Clone the repository
-```bash
 git clone https://github.com/uroojilyas/medical-report-explainer.git
 cd medical-report-explainer
 ```
