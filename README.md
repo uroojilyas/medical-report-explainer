@@ -1,77 +1,109 @@
-```
 #  Medical Report Explainer
 
-An AI-powered RAG application that explains medical reports in plain English and answers follow-up questions using conversational memory.
+An AI-powered RAG (Retrieval-Augmented Generation) application that explains medical reports in plain English and answers follow-up questions using conversational memory.
 
-## 🚀 Features
+---
+
+##  Features
+
 - Upload any medical PDF report
-- Get instant plain English explanation
+- Get an instant plain English explanation
 - Ask follow-up questions in a chat interface
-- Conversation memory (remembers previous questions)
-- Semantic search using Pinecone vector database
+- Conversation memory that remembers previous questions
+- Semantic search powered by Pinecone vector database
+
+---
 
 ##  Tech Stack
-- **LangChain** — RAG pipeline and conversation memory
-- **Groq (LLaMA 3)** — LLM for generating explanations
-- **Pinecone** — Vector database for semantic search
-- **sentence-transformers** — Local embedding model (all-MiniLM-L6-v2)
-- **Django REST Framework** — Backend API
-- **Streamlit** — Frontend UI
-- **pdfplumber** — PDF text extraction
+
+| Layer | Technology |
+|---|---|
+| LLM | Groq (LLaMA 3) |
+| RAG Framework | LangChain |
+| Vector Database | Pinecone |
+| Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
+| Backend | Django REST Framework |
+| Frontend | Streamlit |
+| PDF Extraction | pdfplumber |
+
+---
 
 ##  Architecture
 
-**Upload Phase:**
-1. User uploads PDF → pdfplumber extracts text
-2. Text split into small chunks using LangChain TextSplitter
-3. Each chunk converted to vector using all-MiniLM-L6-v2
-4. Vectors stored in Pinecone vector database
+**Upload Phase**
 
-**Question Phase:**
-1. User question converted to vector
-2. Pinecone finds top 5 most relevant chunks
-3. Relevant chunks + question sent to Groq LLaMA 3
-4. Plain English answer returned to user
+1. User uploads a PDF file
+2. pdfplumber extracts the text
+3. Text is split into small chunks using LangChain TextSplitter
+4. Each chunk is converted to a vector using all-MiniLM-L6-v2
+5. Vectors are stored in Pinecone vector database
+
+**Question Phase**
+
+1. User types a question
+2. Question is converted to a vector
+3. Pinecone finds the top 5 most relevant chunks
+4. Relevant chunks and question are sent to Groq LLaMA 3
+5. A plain English answer is returned to the user
+
+---
 
 ##  Installation
 
 **1. Clone the repository**
 
-    git clone https://github.com/uroojilyas/medical-report-explainer.git
-    cd medical-report-explainer
+```
+git clone https://github.com/uroojilyas/medical-report-explainer.git
+cd medical-report-explainer
+```
 
-**2. Create virtual environment**
+**2. Create a virtual environment**
 
-    python -m venv venv
-    venv\Scripts\activate
+```
+python -m venv venv
+venv\Scripts\activate
+```
 
 **3. Install dependencies**
 
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
-**4. Create .env file**
+**4. Create a .env file in the project root**
 
-    DJANGO_SECRET_KEY=your_django_secret_key
-    GROQ_API_KEY=your_groq_api_key
-    PINECONE_API_KEY=your_pinecone_api_key
-    PINECONE_INDEX_NAME=medical-reports
-    DEBUG=True
+```
+DJANGO_SECRET_KEY=your_django_secret_key
+GROQ_API_KEY=your_groq_api_key
+PINECONE_API_KEY=your_pinecone_api_key
+PINECONE_INDEX_NAME=medical-reports
+DEBUG=True
+```
 
-**5. Run Django backend**
+**5. Run the Django backend**
 
-    python manage.py migrate
-    python manage.py runserver
+```
+python manage.py migrate
+python manage.py runserver
+```
 
-**6. Run Streamlit frontend**
+**6. Run the Streamlit frontend**
 
-    streamlit run streamlit_app.py
+```
+streamlit run streamlit_app.py
+```
+
+---
 
 ##  How to Use
+
 1. Open http://localhost:8501 in your browser
 2. Upload your medical report PDF
 3. Read the plain English explanation
-4. Ask follow-up questions in the chat
+4. Ask follow-up questions in the chat box
+
+---
 
 ## ⚠️ Disclaimer
-This app explains medical reports in simple English for informational purposes only. Always consult a qualified doctor for medical advice.
-```
+
+This application explains medical reports for informational purposes only. Always consult a qualified doctor for medical advice.
