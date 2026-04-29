@@ -1,0 +1,21 @@
+# Environment variables - NEVER expose these
+.env
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Django
+db.sqlite3
+*.log
+
+# Test files
+test_api.py
+
+# OS files
+.DS_Store
+Thumbs.db
