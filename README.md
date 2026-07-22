@@ -95,15 +95,3 @@ streamlit run streamlit_app.py
 
 ---
 
-##  How to Use
-
-1. Open http://localhost:8501 in your browser
-2. Upload your medical report PDF
-3. Read the plain English explanation
-4. Ask follow-up questions in the chat box
-
----
-
-## ⚠️ Disclaimer
-
-This application explains medical reports for informational purposes only. Always consult a qualified doctor for medical advice.
